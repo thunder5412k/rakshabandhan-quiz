@@ -91,7 +91,9 @@ elif st.session_state.page == "result":
 
     # Build filename based on name + score
     filename = f"{st.session_state.username}_{st.session_state.score}.jpg"
-    filepath = os.path.join("C:\\PYTHON", filename)
+    base_dir = os.path.dirname(__file__)  # folder where quiz_app.py is located
+    filepath = os.path.join(base_dir, filename)
+
 
     try:
         img = Image.open(filepath)
